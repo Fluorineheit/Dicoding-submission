@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookshelf Apps</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Files -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <script src="index.js" defer></script>  
+</head>
+<body>
+    <header>
+        <h1 class="ff-sans-normal fs-800">My Bookshelf</h1>
+    </header>
+    <main>
+        <section class="input-section">
+            <h2 class="upper">Please enter a book</h2>
+            <form id="book-input-section">
+                <div class="book-input top-space">
+                    <input type="text" id="new-title-form" class="input-form" placeholder="Book Title" required>
+                </div>
+                <div class="book-input top-space">
+                    <input type="text" id="new-author-form" class="input-form" placeholder="Author" required>
+                </div>
+                <div class="book-input top-space">
+                    <input type="number" id="new-year-form" class="input-form" placeholder="Year" min="1" max="2022" required>
+                </div>
+                <div class="book-input | flex center top-space">
+                    <label for="finished-book" class="center fs-500">Finished reading?</label>
+                    <input type="checkbox" id="finished-book" class="checkbox">
+                </div>
+                <input type="submit" id="new-book-submit" class="button upper top-space" value="Add book" >
+            </form>
+        </section>
+        
+        <section class="filter-section top-margin ">
+            <h2 class="upper">Search book</h2>
+            <div class="flex center">
+                <form id="new-filter-form">
+                    <input type="text" id="new-filter-input" class="input-form" placeholder="What do you want to search?">
+                </form>
+                <input type="submit" id="filter_submit" class="button upper" value="Search">
+            </div>
+            <div class="book_section" id="search_books">
+
+            </div>
+        </section>
+
+        <section class="book_shelf">
+            <h2>Still reading</h2>
+            <div class="book_section" id="uncomplete_books">
+
+            </div>
+
+            <div id="empty-section" class="empty-section flex center">
+                <img src="asset/open-book.png" class="empty-icon" alt="Empty list">
+                <h3>Looks like it's still empty</h3>
+            </div>
+            
+        </section>
+        <section class="book_shelf">
+            <h2>Finished reading</h2>
+            <div class="book_section" id="completed_books"></div>
+            <div id="empty-section" class="empty-section flex center">
+                <img src="asset/open-book.png" class="empty-icon" alt="Empty list">
+                <h3>Looks like it's still empty</h3>
+            </div>
+
+        </section>
+
+        <div id="notification">
+            <!-- <div class="delete_notif | flex ">
+                <p>A book has been deleted</p>
+            </div> -->
+        </div>
+    </main>
+</body>
+</html>

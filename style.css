@@ -1,0 +1,256 @@
+/* ----------------- */
+/*  Custom Property  */
+/* ----------------- */
+
+:root {
+    --clr-orange: 24 93% 51%;
+    --clr-red: 10 100% 50%;
+    --clr-dark: 0 0% 15%;
+    --clr-light: 231 77% 90%;
+    --clr-white: 0 0% 100%;
+
+    /* font-sizes */
+
+    --fs-900: 4rem;
+    --fs-800: 3rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1.3rem;
+    --fs-500: 1rem;
+    --fs-300: 0.9375rem;
+    --fs-200: 0.875rem;
+    
+    /* font-families */
+    --ff-serif: "Bellefair", serif;
+    --ff-sans-cond: "Barlow Condensed", sans-serif;
+    --ff-sans-normal: "Barlow", sans-serif;
+
+}
+
+/* ----------------- */
+/*  Ultility Classes */
+/* ----------------- */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.center {
+    justify-content: center;
+    align-self: center;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.top-space {
+    margin-top: 1em;
+}
+
+/* Typography */
+
+.ff-serif { font-family: var(--ff-serif); } 
+.ff-sans-cond { font-family: var(--ff-sans-cond); } 
+.ff-sans-normal { font-family: var(--ff-sans-normal); } 
+
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
+
+.uppercase { text-transform: uppercase; }
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+
+/* ----------------- */
+/*       Layout      */
+/* ----------------- */
+
+header{
+    text-align: center;
+
+    margin-bottom: 1em;
+    padding: 1em;
+
+    color: hsl(var(--clr-dark));
+    background-color: hsl(var(--clr-orange));
+}
+
+body{
+    background-color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-white));
+    font-family: var(--ff-sans-normal);
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+
+    grid-gap: 1.5em;
+    margin: 1em;
+
+    grid-template-areas: 
+    "input filter"
+    "not-finish finished";
+}
+
+section, 
+.book_items {
+    padding: 1.3em;
+    margin: 0 auto;
+    width: 100%;
+    border: 4px solid hsl(var(--clr-orange));
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.input-section {
+    grid-area: input;
+}
+
+.filter-section {
+    grid-area: filter; 
+}
+
+.filter-section > div {
+    flex-direction: column;
+}
+
+.unfinish-section {
+    grid-area: not-finish;
+}
+
+.finished-section {
+    grid-area: finished;
+}
+
+.input-form {
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.input-section > *,
+.filter-section > * {
+    margin-top: 1rem;
+}
+
+#new-filter-form{
+    flex: 1 1 0%;
+}
+
+.button {
+    width: 10em;
+    padding: 1rem 2rem;
+    border: 0;
+    border-radius: 1rem;
+
+    font-weight: bold;
+    word-spacing: 3px;
+
+    align-self: center;
+    cursor: pointer;
+
+    transition: ease-in-out 0.3s;
+    background-color: hsl(var(--clr-white));
+    
+}
+
+.button:hover {
+    color: hsl(var(--clr-white));
+    background-color: hsl(var(--clr-orange));
+}
+
+.btn-red {
+    background-color: hsl(var(--clr-red));
+}
+
+.btn-red:hover {
+    color: hsl(var(--clr-white));
+    background-color: hsl(var(--clr-red));
+}
+
+.checkbox {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 5px;
+}
+
+#finished-book {
+    align-items: center;
+}
+
+.book_section > *{
+    margin-top: 1em;
+}
+
+.book-item{
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.book-option {
+    margin-top: 1em;
+    justify-content: center;
+}
+
+.empty-section {
+    margin-top: 3em;
+    flex-direction: column;
+}
+
+.empty-section > img {
+    display: block;
+    margin: 0 auto;
+}
+
+.empty-icon {
+    width: 10em;
+    background-size: cover;
+    align-self: center;
+    filter: invert(44%) sepia(87%) saturate(2843%) hue-rotate(358deg) brightness(108%) contrast(93%);
+}
+
+.delete_notif {
+    position: fixed;
+    border: 4px solid hsl(var(--clr-dark));
+    border-radius: 10px;
+    background-color: hsl(var(--clr-orange));
+    text-align: center;
+    
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 1.3em;
+    bottom: 10px;
+    
+}
+
+.delete_notif p {
+    font-weight: bold;
+}
+
+@media(max-width: 55rem) {
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    .input-section > div:nth-child(5) {
+        justify-content: flex-end;
+    }
+}
